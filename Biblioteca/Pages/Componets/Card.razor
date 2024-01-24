@@ -1,0 +1,15 @@
+﻿<div class="mb-2">
+    <div class="card" style="width: 18rem;">
+        <img src="data:image/[formato];base64,@Profile.Foto" class="card-img-top" alt="Descripción de la imagen">
+        <div class="card-body">
+            <h5 class="card-title">@Profile.Nombre</h5>
+            <p class="card-text">@Profile.Descripcion</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public ProfileCard Profile { get; set; } = new ProfileCard();
+}
