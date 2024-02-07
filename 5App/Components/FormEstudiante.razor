@@ -1,0 +1,48 @@
+﻿@using _5App.Data;
+<div class="card">
+<div class="card-header">
+    <div class="card-title">
+            <h3>Registrar estudiante</h3>
+    </div>
+</div>
+<div class="card-body">
+    <div class="row">
+        <div class="col-4">
+            <div class="mb-3">
+                <label class="form-label">Matrícula</label>
+                <input @bind="Datos.Matricula" type="text" class="form-control" placeholder="Matrícula">
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="mb-3">
+                <label class="form-label">Nombre(s)</label>
+                <input @bind="Datos.Nombre" type="text" class="form-control" placeholder="Nombre(s)">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>De ser correcto tu nombre es 
+                <strong>@Datos.Nombre</strong> y tu matricula es 
+                <strong>@Datos.Matricula</strong> 
+            </p>
+        </div>
+    </div>
+</div>
+<div class="card-footer">
+    <div class="row">
+        <span @onclick="Registrar" class="btn btn-primary">Guardar</span>
+    </div>
+</div>
+</div>
+
+@code {
+    [Parameter]
+    public Estudiante Datos { get; set; } = new Estudiante();
+
+    public void Registrar()
+    {
+        Memoria.Estudiantes.Add(Datos);
+        StateHasChanged();
+    }
+}
