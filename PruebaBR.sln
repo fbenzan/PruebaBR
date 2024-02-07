@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PruebaBR.Server", "PruebaBR
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{F2D598C2-F526-4102-AB36-09671B1F982A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "5App", "5App\5App.csproj", "{7D5CC21E-4722-4C76-ACB5-09DA777AAE94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F2D598C2-F526-4102-AB36-09671B1F982A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2D598C2-F526-4102-AB36-09671B1F982A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2D598C2-F526-4102-AB36-09671B1F982A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D5CC21E-4722-4C76-ACB5-09DA777AAE94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D5CC21E-4722-4C76-ACB5-09DA777AAE94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D5CC21E-4722-4C76-ACB5-09DA777AAE94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D5CC21E-4722-4C76-ACB5-09DA777AAE94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
