@@ -1,4 +1,5 @@
-﻿<h3>Factura</h3>
+﻿@inject FacturacionSimple.Servicios.IFacturaServices servicios
+<h3>Factura</h3>
 <div class="card">
     <div class="card-header">
         <div class="card-header">
@@ -88,7 +89,7 @@
         </div>
     </div>
     <div class="card-footer">
-        <span class="btn btn-success">Guardar</span>
+        <span class="btn btn-success" @onclick="Registrar">Guardar</span>
     </div>
 </div>
 @code {
@@ -108,5 +109,14 @@
     {
         Factura.Detalles.Remove(detalle);
         StateHasChanged();
+    }
+    public void Registrar()
+    {
+        var regitro = servicios.Create(Factura);
+        if (regitro)
+        {
+            Factura = new();
+            StateHasChanged();
+        }
     }
 }

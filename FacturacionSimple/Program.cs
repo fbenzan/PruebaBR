@@ -2,6 +2,7 @@ using FacturacionSimple;
 using FacturacionSimple.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using FacturacionSimple.Servicios;
 
 var builder = WebApplication.CreateBuilder(args);
 Memoria.Facturas = new();
@@ -9,6 +10,7 @@ Memoria.Facturas = new();
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddScoped<IFacturaServices,FacturaServices>();
 
 var app = builder.Build();
 
