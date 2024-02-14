@@ -1,0 +1,49 @@
+﻿@using FacturacionSimple.Data
+@inject FacturacionSimple.Servicios.IFacturaServices servicios
+@page "/facturas"
+<h3>Facturas</h3>
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">Filtrar</span>
+    <input type="text" class="form-control" @bind="Filtro">
+    <span class="input-group-text" id="basic-addon2">
+        <span class="btn btn-secondary" @onclick="Buscar">Buscar</span>
+    </span>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Monto</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if(Datos!=null && Datos.Any())
+        {
+            @foreach (var factura in Datos)
+            {
+                <tr>
+                    <th scope="row">@factura.Numero</th>
+                    <td>@factura.Cliente</td>
+                    <td>@factura.Fecha.ToString("dd/MM/yyyy")</td>
+                    <td>RD$ @factura.Total.ToString("N2")</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+@code {
+    public string Filtro { get; set; } = "";
+    public List<Factura> Datos { get; set; } = new List<Factura>();
+    protected async override Task OnInitializedAsync()
+    {
+        Buscar();
+        await Task.Delay(1);
+    }
+    void Buscar()
+    {
+        Datos = servicios.Get(Filtro);
+        StateHasChanged();
+    }
+}
