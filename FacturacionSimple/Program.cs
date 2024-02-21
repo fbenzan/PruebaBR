@@ -10,12 +10,16 @@ Memoria.Facturas = new();
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddDbContext<FSDbContext>();
+builder.Services.AddDbContext<IFSDbContext, FSDbContext>();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddScoped<IFacturaServices,FacturaServices>();
-
 var app = builder.Build();
-
+//
+#region Inicializar la base de datos
+using var scoped = app.Services.CreateScope();
+var service = scoped.ServiceProvider.GetRequiredService<FSDbContext>();
+service.Database.EnsureCreated();
+#endregion
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
