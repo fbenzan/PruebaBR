@@ -3,12 +3,14 @@ using FacturacionSimple.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using FacturacionSimple.Servicios;
+using FacturacionSimple.Contexto;
 
 var builder = WebApplication.CreateBuilder(args);
 Memoria.Facturas = new();
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+builder.Services.AddDbContext<FSDbContext>();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddScoped<IFacturaServices,FacturaServices>();
 
