@@ -1,7 +1,13 @@
 ﻿@using FacturacionSimple.Data
 @inject FacturacionSimple.Servicios.IFacturaServices servicios
+@inject IJSRuntime JS
+
 @page "/facturas"
-<h3 class="d-print-none">Facturas</h3>@*No se ve en el modo de impresion*@
+<h3 class="d-print-none">Facturas 
+    <span class="btn btn-outline-info" @onclick="Imprimir">
+        <span class="oi oi-print"></span>
+    </span>
+</h3>@*No se ve en el modo de impresion*@
 <h3 class="d-none d-print-block">Reportes de facturas</h3>@*Solo se ve en modo de impresion*@
 <div class="input-group mb-3 d-print-none">
   <span class="input-group-text" id="basic-addon1">Filtrar</span>
@@ -53,5 +59,9 @@
     void Nueva()
     {
         urlHelper.NavigateTo("/facturas/nueva");
+    }
+    async void Imprimir()
+    {
+        await JS.InvokeVoidAsync("Imprimir");
     }
 }
