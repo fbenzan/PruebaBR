@@ -90,6 +90,7 @@
     </div>
     <div class="card-footer">
         <span class="btn btn-success" @onclick="Registrar">Guardar</span>
+        <span class="btn btn-danger" @onclick="Cancelar">Cancelar</span>
     </div>
 </div>
 @code {
@@ -117,6 +118,11 @@
         {
             Factura = new();
             StateHasChanged();
+            urlHelper.NavigateTo("/facturas");
         }
+    }
+    public void Cancelar()
+    {
+        urlHelper.NavigateTo("/facturas");
     }
 }

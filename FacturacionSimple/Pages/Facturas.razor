@@ -8,6 +8,9 @@
     <span class="input-group-text" id="basic-addon2">
         <span class="btn btn-secondary" @onclick="Buscar">Buscar</span>
     </span>
+    <span class="input-group-text" id="basic-addon2">
+        <span class="btn btn-primary" @onclick="Nueva">Nuevo</span>
+    </span>
 </div>
 <table class="table">
     <thead>
@@ -45,5 +48,9 @@
     {
         Datos = servicios.Get(Filtro);
         StateHasChanged();
+    }
+    void Nueva()
+    {
+        urlHelper.NavigateTo("/facturas/nueva");
     }
 }

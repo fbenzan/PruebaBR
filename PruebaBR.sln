@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biblioteca", "Biblioteca\Bi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "5App", "5App\5App.csproj", "{7D5CC21E-4722-4C76-ACB5-09DA777AAE94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacturacionSimple", "FacturacionSimple\FacturacionSimple.csproj", "{D1B3A819-6337-4D1F-BA6B-21857AD71701}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FacturacionSimple", "FacturacionSimple\FacturacionSimple.csproj", "{D1B3A819-6337-4D1F-BA6B-21857AD71701}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
