@@ -1,8 +1,9 @@
 ﻿@using FacturacionSimple.Data
 @inject FacturacionSimple.Servicios.IFacturaServices servicios
 @page "/facturas"
-<h3>Facturas</h3>
-<div class="input-group mb-3">
+<h3 class="d-print-none">Facturas</h3>@*No se ve en el modo de impresion*@
+<h3 class="d-none d-print-block">Reportes de facturas</h3>@*Solo se ve en modo de impresion*@
+<div class="input-group mb-3 d-print-none">
   <span class="input-group-text" id="basic-addon1">Filtrar</span>
     <input type="text" class="form-control" @bind="Filtro">
     <span class="input-group-text" id="basic-addon2">
